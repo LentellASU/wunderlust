@@ -1,0 +1,278 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Header */
+header {
+    background: #007bff;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+header p {
+    margin-bottom: 15px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    background: #333;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 20px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background: #007bff;
+}
+
+/* Main content */
+main {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+article, #testimonials article {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+article h3, #testimonials h3 {
+    color: #007bff;
+}
+
+
+figure {
+    text-align: left;
+    margin: 20px 0;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+
+img, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.skip-link {
+    background: #007bff;
+    color: #fff;
+    padding: 8px 15px;
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    z-index: 100;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+/* Testimonials */
+#testimonials blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 20px;
+    padding: 20px;
+    position: relative;
+    quotes: "“" "”" "‘" "’";
+}
+
+#testimonials blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 10px;
+    vertical-align: -0.4em;
+}
+
+#testimonials blockquote p {
+    display: inline;
+}
+
+/* Form */
+#contact {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: grid;
+    grid-gap: 10px;
+    max-width: 500px;
+    margin: auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form input[type="radio"] {
+    margin-right: 10px;
+}
+
+fieldset {
+    padding: 0;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #0056b3;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+form input:invalid:required,
+form select:invalid:required {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul li {
+        display: block;
+    }
+
+    header, nav ul li a {
+        text-align: center;
+    }
+}
