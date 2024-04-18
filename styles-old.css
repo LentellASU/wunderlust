@@ -1,0 +1,385 @@
+/* Brion Lentell April 13, 2024 */
+/* This is a previously created styles.css for a previous assignment for the wunderlust project.  The directions say to create a new one, but since this one exists already and you cannot have 2 files of the same name, I am going to use this one.  I will add the new styles to the bottom of this file.  I will also add a comment to show where the new styles begin.  I would suggest updates to several assignment directions to be more clear in what to reuse, what not to reuse, should I have cleared this project out first.  Why are directions being given in threads on Slack instead of updating the course information on Canvas or the codepen pages.  Why is this course a near repeat of GIT 337?  There those are some of my frustrations in some comments. */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Image reset end */
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Header */
+header {
+    background: #007bff;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+header p {
+    margin-bottom: 15px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    background: #333;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 20px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background: #007bff;
+}
+
+/* Main content */
+main {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+article, #testimonials article {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+article h3, #testimonials h3 {
+    color: #007bff;
+}
+
+
+figure {
+    text-align: left;
+    margin: 20px 0;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+
+img, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.skip-link {
+    background: #007bff;
+    color: #fff;
+    padding: 8px 15px;
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    z-index: 100;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+/* Testimonials */
+#testimonials blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 20px;
+    padding: 20px;
+    position: relative;
+    quotes: "“" "”" "‘" "’";
+}
+
+#testimonials blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 10px;
+    vertical-align: -0.4em;
+}
+
+#testimonials blockquote p {
+    display: inline;
+}
+
+/* Form */
+#contact {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: grid;
+    grid-gap: 10px;
+    max-width: 500px;
+    margin: auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form input[type="radio"] {
+    margin-right: 10px;
+}
+
+fieldset {
+    padding: 0;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #0056b3;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+form input:invalid:required,
+form select:invalid:required {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul li {
+        display: block;
+    }
+
+    header, nav ul li a {
+        text-align: center;
+    }
+}
+
+/* wunderlust-majorca styles not including the css reset */
+
+:root {
+    --primary-color: #1E5873; /* Blumine */
+    --secondary-color: #F66D44; /* Carrot Orange */
+    --background-color: #EFF1F3; /* Porcelain */
+    --text-color: #353535; /* Tuna */
+    --font-primary: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Mobile Navigation Styles */
+nav {
+    background-color: var(--menu-background-color);
+    text-align: center; /* Center text for all nav items */
+}
+
+nav h2 {
+    color: var(--menu-item-color);
+    background-color: darken(var(--menu-background-color), 10%); /* Darken for the heading */
+    padding: 20px; /* Add space around the text */
+    margin-bottom: 10px; /* Space between menu header and items */
+    font-size: 1.5rem; /* Increase font size for better readability */
+}
+
+nav ul {
+    list-style: none; /* Remove default list styling */
+}
+
+nav li {
+    background-color: lighten(var(--menu-background-color), 5%); /* Slightly lighten the color for list items */
+    margin: 10px 0; /* Add some margin to separate the items */
+}
+
+nav a {
+    display: block; /* Make the links fill the entire list item for larger click/touch area */
+    padding: 20px; /* Add space around the text */
+    color: var(--menu-item-color); /* Set text color */
+    text-decoration: none; /* Remove underlines from links */
+    font-size: 1.25rem; /* Slightly increase font size */
+    border-top: 2px solid var(--menu-background-color); /* Add a top border to separate items */
+}
+
+/* Hover effect for menu items */
+nav a:hover, nav a:focus {
+    background-color: darken(var(--menu-background-color), 5%);
+}
+
+/* This CSS uses Sass functions like lighten() and darken(). If you are not using Sass, you will need to manually specify the colors. */
+
+/* Add responsive media queries if needed */
+@media (min-width: 768px) {
+    /* Styles for tablet and desktop views */
+}

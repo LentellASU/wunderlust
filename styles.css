@@ -1,278 +1,1112 @@
-/* General Reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap");
+/* Brion Lentell April 13, 2024 */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Image reset end */
+
+/* wunderlust-majorca styles not including the css reset */
+
+:root {
+	--teal: #55bcd5;
+	--blue: #499bd2;
+	--white: #ffffff;
+	--purple: #9b26b0;
+	--black: #000000;
+	--yellow: #f6d64a;
+	--dark-gray: #222222;
+	--light-gray: #eaeaea;
+	--font-primary: "Montserrat", sans-serif;
+	--font-secondary: "Molle", cursive;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
+	font-family: var(--font-primary);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-secondary);
+	font-size: 2.5rem;
+}
+
+h4,
+p,
+q,
+small,
+nav,
+button,
+form {
+	font-family: var(--font-primary);
+}
+
+/* Navigation styles */
+#skip {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	background: #000000;
+	color: #ffffff;
+	padding: 8px 16px;
+	z-index: 100;
+	transition: top 0.3s;
+}
+
+#skip:focus,
+#skip:active {
+	top: 0;
+}
+
+nav h2 {
+	color: var(--blue);
+	background-color: var(--black);
+	padding: 20px;
+	margin-bottom: 10px;
+	font-size: 1.5rem;
+	display: none;
+}
+
+#menu-toggle {
+	width: 100%;
+}
+
+nav input {
+	display: none;
+}
+label[for="toggle"]:not(:checked) {
+	background-color: yellow;
+}
+label[for="toggle"]:checked {
+	display: block;
+	background-color: black;
+	color: var(--background-color);
+	padding: 1em;
+	text-align: center;
+	font-size: 1.25rem;
+	cursor: pointer;
+	margin-bottom: 0;
+	border-bottom: 2px solid #007b9c;
+}
+
+nav ul {
+	list-style: none;
+	line-height: 0;
+}
+
+nav li {
+	background-color: var(--menu-background-color);
+	margin: 10px 0;
+	border-bottom: 2px solid black;
+}
+
+nav a {
+	display: block;
+	padding: 40px;
+	color: var(--menu-item-color);
+	text-decoration: none;
+	font-size: 1.25rem;
+	font-weight: bolder;
+	border-top: 2px solid var(--menu-background-color);
+}
+
+nav a:hover,
+nav a:focus {
+	background-color: var(--menu-background-color);
+}
+
+/* Header styles */
+header {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	color: black;
+	padding: 10px;
+}
+
+header > h1,
+header > p {
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+/* Position the logo */
+#logo {
+	align-self: flex-start;
+	margin-bottom: 10px;
+}
+
+#menu-toggle {
+	align-self: flex-end;
+	margin-bottom: 10px;
+}
+
+header {
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+/* Navigation styles */
+nav ul {
+	list-style: none;
+	padding: 0;
+	text-align: center;
+}
+
+nav h2 {
+	display: none;
+}
+
+nav li {
+	display: inline;
+	margin-right: 15px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+/* Base styles for the menu, which will be visible when the menu is retracted */
+#menu-toggle label {
+	display: block;
+	background-color: #ffd700;
+	color: black;
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 5px;
+	cursor: pointer;
+	margin-top: 50px;
+	width: calc(100% - 20px);
+}
+
+#menu-toggle input {
+	display: none;
+}
+
+/* Styles for the list items */
+#menu-toggle ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: none;
+}
+
+#menu-toggle ul li {
+	border-bottom: 1px solid var(--black);
+}
+
+#menu-toggle ul li a {
+	display: block;
+	color: var(--black);
+	text-decoration: none;
+	border-bottom: 2px solid var(--black);
+	background-color: var(--teal);
+}
+
+#menu-toggle input:checked + label {
+	background-color: #000000;
+	color: white;
+	width: 100%;
+}
+
+#menu-toggle input:checked ~ ul {
+	display: block;
+	position: absolute;
+	width: 100%;
+	left: 0;
+}
+header {
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+h1,
+header p {
+	order: 1;
+	width: 100%;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
 }
 
-/* Skip link */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #000;
-    color: white;
-    padding: 8px;
-    z-index: 100;
-}
-
-.skip-link:focus {
-    top: 0;
-}
-
-/* Header */
-header {
-    background: #007bff;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    margin-bottom: 5px;
-}
-
-header p {
-    margin-bottom: 15px;
-}
-
-/* Navigation */
-nav ul {
-    list-style: none;
-    background: #333;
-    text-align: center;
-    padding: 10px 0;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    padding: 15px 20px;
-    display: inline-block;
-}
-
-nav ul li a:hover {
-    background: #007bff;
-}
-
-/* Main content */
+/* Main content styles */
 main {
-    background: #fff;
-    padding: 20px;
-    text-align: center;
+	padding: 15px;
 }
 
-section {
-    margin-bottom: 40px;
+main h2,
+main p {
+	margin-right: 30px;
+	margin-left: 30px;
+	margin-bottom: 10px;
+	line-height: 2;
 }
 
-hr {
-    margin: 20px 0;
-    border: 0;
-    border-top: 1px solid #ccc;
-}
-
-article {
-    margin-bottom: 20px;
-}
-
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    align-items: start;
-}
-
-article, #testimonials article {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-article h3, #testimonials h3 {
-    color: #007bff;
-}
-
-
-figure {
-    text-align: left;
-    margin: 20px 0;
-}
-
-figcaption {
-    margin-top: 10px;
-    font-style: italic;
-}
-
-
-img, svg {
-    max-width: 100%;
-    height: auto;
-}
-
-
-.skip-link {
-    background: #007bff;
-    color: #fff;
-    padding: 8px 15px;
-    position: absolute;
-    top: -40px;
-    left: 10px;
-    z-index: 100;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.skip-link:focus {
-    top: 10px;
-}
-/* Testimonials */
-#testimonials blockquote {
-    background: #f9f9f9;
-    border-left: 10px solid #ccc;
-    margin: 20px;
-    padding: 20px;
-    position: relative;
-    quotes: "“" "”" "‘" "’";
-}
-
-#testimonials blockquote:before {
-    color: #ccc;
-    content: open-quote;
-    font-size: 4em;
-    line-height: 0.1em;
-    margin-right: 10px;
-    vertical-align: -0.4em;
-}
-
-#testimonials blockquote p {
-    display: inline;
-}
-
-/* Form */
+#intro,
+#plan,
+#testimonials,
+#about,
 #contact {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
+	margin-bottom: 50px;
 }
 
-#contact h2 {
-    text-align: center;
-    margin-bottom: 20px;
+/* Plan Your Trip Section Styles */
+#plan {
+	background-color: #ffd700;
+	padding: 20px;
+	text-align: center;
 }
 
-form {
-    display: grid;
-    grid-gap: 10px;
-    max-width: 500px;
-    margin: auto;
+#plan h3 {
+	color: black;
+	margin-bottom: 30px;
 }
 
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+#plan div {
+	display: flex;
+	flex-direction: column;
 }
 
-form input[type="text"],
-form input[type="email"],
-form input[type="tel"],
-form select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+#plan section {
+	margin-bottom: 20px;
+	background-color: #00bfff;
+	border: 2px solid black;
 }
 
-form input[type="radio"] {
-    margin-right: 10px;
+#plan section h4 {
+	color: black;
+	margin: 10px 0;
 }
 
-fieldset {
-    padding: 0;
+#plan section a {
+	display: block;
+	padding: 10px;
+	margin: 10px;
 }
 
-legend {
-    font-weight: bold;
-    margin-bottom: 10px;
+#plan img {
+	width: 60%;
+	height: auto;
+	margin: auto;
 }
 
-button[type="submit"] {
-    background: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+#plan a {
+	background-color: #00bfff;
+}
+/* Testimonials Section Styles */
+#testimonials {
+	text-align: center;
+	padding: 20px;
+	background-color: #ffffff;
 }
 
-button[type="submit"]:hover {
-    background: #0056b3;
+#testimonials h3 {
+	font-size: 2rem;
+	margin-bottom: 20px;
+	color: #000000;
 }
 
-form input[type="text"],
-form input[type="email"],
-form input[type="tel"],
-form select:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+#testimonials div {
+	display: flex;
+	flex-direction: column;
 }
 
-
-form input:invalid:required,
-form select:invalid:required {
-    border-color: #dc3545;
-    background-color: #f8d7da;
+#testimonials section {
+	margin-bottom: 30px;
 }
 
-/* Footer */
+#testimonials img {
+	border-radius: 50%;
+	width: 150px;
+	height: auto;
+	margin: 0 auto 20px;
+}
+
+#testimonials h4 {
+	font-size: 1.5rem;
+	color: #000000;
+	margin-bottom: 5px;
+}
+
+#testimonials p {
+	font-size: 1rem;
+	color: #555555;
+	margin-bottom: 10px;
+}
+
+#testimonials q {
+	font-size: 1rem;
+	display: block;
+	quotes: "“" "”" "‘" "’";
+	margin-bottom: 20px;
+	color: #000000;
+	padding: 0 20px;
+	position: relative;
+	margin: 0 auto;
+	width: 220px;
+}
+
+#testimonials q::before,
+#testimonials q::after {
+	color: #555555;
+	font-size: 1.5rem;
+	position: absolute;
+}
+
+#testimonials q::before {
+	content: open-quote;
+	top: -10px;
+	left: 0;
+}
+
+#testimonials q::after {
+	content: close-quote;
+	bottom: -10px;
+	right: 0;
+}
+
+/* About Your Destination Section Styles */
+#about {
+	background-color: var(--blue);
+	color: white;
+	padding: 20px;
+	text-align: center;
+}
+
+#about h3 {
+	font-size: 2rem;
+	margin-bottom: 30px;
+}
+
+#about div {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+#about section {
+	background-color: transparent;
+}
+
+#about img {
+	width: 80px;
+	height: auto;
+	margin: 0 auto 20px;
+}
+
+#about h4 {
+	font-size: 1.2rem;
+	margin-bottom: 5px;
+}
+
+#about p {
+	font-size: 1rem;
+}
+
+/* Contact Section Styles */
+#contact {
+	background-color: #ffffff;
+	padding: 20px;
+	text-align: center;
+}
+
+#contact h3 {
+	font-size: 1.8rem;
+	margin-bottom: 20px;
+	color: #000000;
+}
+
+#contact h3 .form-required {
+	font-family: var(--font-primary);
+	font-size: small;
+}
+
+#contact form {
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+#contact label {
+	display: block;
+	margin: 10px 0;
+	color: #000000;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact select {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #800080;
+	border-radius: 5px;
+}
+
+#contact .radio-input {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	user-select: none;
+}
+
+#contact .radio-input input[type="radio"] {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+#contact .radio-control {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #fff;
+	border: 2px solid #800080;
+	border-radius: 50%;
+}
+
+#contact .radio-input input[type="radio"]:checked ~ .radio-control {
+	background-color: #800080;
+}
+
+#contact .radio-input .radio-control::after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+#contact .radio-input input[type="radio"]:checked ~ .radio-control::after {
+	display: block;
+}
+
+#contact .radio-control::after {
+	top: 5px;
+	left: 5px;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: #fff;
+}
+
+#contact .custom-select {
+	position: relative;
+	background-color: #fff;
+	margin-bottom: 20px;
+}
+
+#contact .custom-select::after {
+	content: "\25BC";
+	color: #800080;
+	position: absolute;
+	right: 10px;
+	top: 15px;
+}
+
+#contact input[type="submit"] {
+	width: 100%;
+	padding: 15px;
+	background-color: #800080;
+	color: #ffffff;
+	border: none;
+	border-radius: 5px;
+	font-size: 1.2rem;
+	margin-top: 20px;
+}
+
+#contact input[type="submit"]:hover {
+	background-color: #a000a0;
+}
+
+/* Footer styles */
 footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
+	background-color: var(--light-gray);
+	color: #fff;
+	text-align: center;
+	padding: 20px;
+	width: 100%;
 }
 
+footer p,
 footer a {
-    color: #fff;
-    text-decoration: none;
+	display: block;
+	color: var(--black);
+	margin: 10px 0;
+	text-decoration: none;
+	font-size: 0.9rem;
 }
 
-footer a:hover {
-    text-decoration: underline;
+footer a:hover,
+footer a:focus {
+	text-decoration: underline;
 }
 
-@media screen and (max-width: 768px) {
-    nav ul li {
-        display: block;
-    }
+/* footer text */
+footer p {
+	margin-bottom: 10px;
+}
 
-    header, nav ul li a {
-        text-align: center;
-    }
+@media screen and (min-width: 768px) {
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px 20px;
+		background-color: var(--teal);
+		background-image: linear-gradient(to bottom, var(--teal), var(--white));
+	}
+
+	#logo img {
+		width: auto;
+		height: 80px;
+	}
+
+	#menu-toggle label {
+		display: none;
+	}
+
+	header h1 {
+		font-size: 2rem;
+		color: var(--black);
+		margin-left: 20px;
+	}
+
+	header nav {
+		flex-grow: 1;
+		text-align: right;
+	}
+
+	nav ul {
+		display: flex;
+		justify-content: flex-end;
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+	#menu-toggle ul {
+		display: flex;
+		align-items: center;
+	}
+	#menu-toggle input:checked ~ ul {
+		position: unset;
+	}
+
+	#menu-toggle ul li a {
+		background-color: var(--white);
+		height: 20px;
+		text-align: center;
+		border-bottom: none;
+	}
+
+	#menu-toggle ul li.active a {
+		background-color: var(--yellow);
+	}
+	#menu-toggle ul li {
+		border: none;
+	}
+	nav li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	nav a {
+		color: var(--black);
+		text-decoration: none;
+		padding: 20px;
+		display: block;
+		height: 100%;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	/* Styles for the main article */
+	main {
+		padding: 20px;
+	}
+
+	main h2 {
+		font-size: 1.8rem;
+		margin-bottom: 20px;
+		color: #000000;
+	}
+
+	main p {
+		font-size: 1rem;
+		margin-bottom: 20px;
+	}
+
+	main img {
+		width: 100%;
+		height: auto;
+		margin-bottom: 20px;
+	}
+	#img-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto auto;
+		gap: 10px;
+		row-gap: 0px;
+		margin-top: 20px;
+	}
+
+	/* Select the first two img elements directly */
+	#img-grid img:first-of-type,
+	#img-grid img:nth-of-type(2) {
+		grid-column: span 1;
+		width: 100%;
+		height: auto;
+	}
+
+	#img-grid picture {
+		grid-row: 2;
+		grid-column: 1 / -1;
+		width: 100%;
+	}
+
+	#img-grid picture img {
+		width: 100%;
+		height: auto;
+	}
+
+	/* Plan Your Trip Section Styles */
+	#plan {
+		background-color: var(--yellow);
+		padding: 20px;
+		text-align: center;
+	}
+
+	#plan h3 {
+		color: black;
+		margin-bottom: 30px;
+	}
+
+	#plan div {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 20px;
+	}
+
+	#plan section {
+		background-color: var(--teal);
+		border: 2px solid black;
+	}
+
+	#plan section h4 {
+		color: black;
+		margin: 10px 0;
+	}
+
+	#plan section a {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+	}
+
+	#plan img {
+		width: 50%;
+		height: auto;
+		margin-bottom: 10px;
+	}
+
+	#plan a {
+		background-color: var(--teal);
+	}
+
+	#plan {
+		overflow: hidden;
+	}
+
+	/* Testimonials Section Styles */
+	#testimonials {
+		text-align: center;
+		padding: 20px;
+		background-color: #ffffff;
+	}
+
+	#testimonials h3 {
+		font-size: 2rem;
+		margin-bottom: 20px;
+		color: #000000;
+	}
+
+	#testimonials div {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
+
+	#testimonials section {
+		margin-bottom: 30px;
+	}
+
+	#testimonials img {
+		border-radius: 50%;
+		width: 120px;
+		height: auto;
+		margin: 0 auto 20px;
+	}
+
+	#testimonials h4 {
+		font-size: 1.5rem;
+		color: #000000;
+		margin-bottom: 5px;
+	}
+
+	#testimonials p {
+		font-size: 1rem;
+		color: black;
+		margin-bottom: 10px;
+	}
+
+	#testimonials q {
+		font-size: 1rem;
+		display: block;
+		quotes: "“" "”" "‘" "’";
+		margin-bottom: 20px;
+		color: #000000;
+		padding: 0 20px;
+		position: relative;
+	}
+
+	#testimonials q::before,
+	#testimonials q::after {
+		color: black;
+		font-size: 1.5rem;
+		position: absolute;
+	}
+
+	#testimonials q::before {
+		content: open-quote;
+		top: -10px;
+		left: 0;
+	}
+
+	#testimonials q::after {
+		content: close-quote;
+		bottom: -10px;
+		right: 0;
+	}
+
+	/* About Your Destination Section Styles for tablet */
+	#about {
+		background-color: var(--blue);
+		color: white;
+		padding: 20px;
+		text-align: center;
+	}
+
+	#about h3 {
+		font-size: 2rem;
+		margin-bottom: 30px;
+	}
+
+	#about div {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 20px;
+		align-items: center;
+	}
+
+	#about img {
+		width: 50px;
+		height: auto;
+		margin-bottom: 10px;
+	}
+
+	#about h4 {
+		font-size: 1rem;
+		margin-bottom: 5px;
+	}
+
+	#about p {
+		font-size: 0.9rem;
+	}
+
+	/* Contact Section Styles for tablet */
+	label {
+		text-align: left;
+	}
+
+	#contact .radio-input {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	#contact .radio-input input[type="radio"] {
+		margin-right: 10px;
+	}
+
+	#contact label {
+		display: flex;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+
+	#contact fieldset {
+		border: none;
+		padding: 0;
+	}
+
+	#contact .radio-control {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		margin-right: 10px;
+		position: relative;
+	}
+
+	#contact .radio-label {
+		display: inline;
+		margin: 0;
+		order: 2;
+	}
+
+	#nums {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+	#nums legend {
+		text-align: left;
+	}
+	#nums fieldset {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	#nums label {
+		flex-basis: 30%;
+		text-align: center;
+	}
+
+	footer {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding: 10px 20px;
+	}
+
+	footer p {
+		order: 1;
+		text-align: left;
+		margin-right: 20px;
+	}
+
+	footer a {
+		order: 2;
+		margin: 0 10px;
+	}
+}
+@media (min-width: 769px) {
+	body {
+		margin: 0 auto;
+		max-width: 1200px;
+	}
+	header h1 {
+		position: absolute;
+		left: 150px;
+		top: 20px;
+	}
+	header p {
+		position: absolute;
+		left: 150px;
+		top: 70px;
+	}
+	nav li {
+		display: inline-block;
+		margin-right: 5px;
+	}
+
+	nav ul {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	#intro {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+	}
+	#intro h2 {
+		order: 0;
+		margin-bottom: 0;
+	}
+	#intro p {
+		order: 3;
+		position: absolute;
+		top: 180px;
+		width: 40%;
+	}
+	#img-grid {
+		order: 1;
+	}
+
+	#plan div {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	#testimonials div {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	#contact form {
+		display: grid;
+		grid-template-columns: 4fr 1fr 4fr;
+		grid-gap: 30px;
+		max-width: 1080px;
+	}
+
+	footer {
+		padding: 20px;
+		justify-content: space-evenly;
+	}
 }
